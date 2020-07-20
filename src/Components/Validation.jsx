@@ -2,25 +2,27 @@ import React from 'react';
 import './Reto.css'
 import { Button,Input} from 'antd';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 export default class Register extends React.Component  {
   constructor(props) {
     super(props);
     this.state = {
-    name:[]
+    name:[],
+    data:[]
     }
   }
   render(){
     return (
       <div className="Validation">
          <label>
-          Buscar Cliente por name:
+          Buscar Cliente por nombre :
    <Input type="text" value={this.state.name} onChange={(event)=>this.setState({name: event.target.value})}/>
    </label>
    <Button onClick={()=>
  axios.get("https://desafio-01.herokuapp.com/items" + "/" + this.state.name).then(function (response) {
   // handle success
-  response.data===null? console.log("noexiste") : console.log("existe")
+  response.data===null? swal("noexiste") : swal("existe")
 })
 .catch(function (error) {
   // handle error

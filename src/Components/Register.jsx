@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './Reto.css'
-import { Button, Radio ,Input} from 'antd';
+import { Button, Radio ,Input, Card} from 'antd';
+import swal from 'sweetalert';
 
 
 
@@ -21,7 +22,7 @@ export default class Register extends React.Component {
       console.log(this.state.nombre)
     return (
       <div className="Register">
-      
+      <Card>
         <label>
           Name:
           <Input type="text" value={this.state.nombre} onChange={(event)=>this.setState({nombre: event.target.value})} />
@@ -50,6 +51,7 @@ export default class Register extends React.Component {
 })
     }
     type="primary">Inscribir</Button>
+    </Card>
       </div>
     );
   }

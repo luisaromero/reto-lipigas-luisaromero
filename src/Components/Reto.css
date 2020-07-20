@@ -5,3 +5,22 @@
     height: 100vh;
 
 }
+.Home{
+    flex-direction: column;
+    background-color: rgba(9, 55, 180, 0.822);
+}
+.card{
+    flex-direction: column;
+}
+.Home img{
+    width:35%;
+}
+.Home h1{
+    font-size: 110%;
+}
+.ant-btn{
+    width: 35%;
+}
+.btns{
+    padding: 3%;
+}
